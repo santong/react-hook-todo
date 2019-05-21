@@ -34,17 +34,19 @@ const loadDataAsync = () => {
 };
 
 function App() {
-  const [todoList, setTodoList] = useState([])
+  const [todoList, setTodoList] = useState([]);
+  const [isFinish, setIsFinish] = useState(false);
 
-  loadDataAsync().then((todoListFromCloud) => {
-    setTodoList(todoListFromCloud)
-  })
+  loadDataAsync()
+    .then(todoListFromCloud => {
+      setTodoList(todoListFromCloud);
+      setIsFinish(true);
+    })
+    .catch(e => {
+      setIsFinish(true);
+    });
 
-  return (
-    <div className="App">
-      {todoList.length > 0 && <Todo todoList={todoList}/>}
-    </div>
-  );
+  return <div className="App">{isFinish && <Todo todoList={todoList} />}</div>;
 }
 
 export default App;

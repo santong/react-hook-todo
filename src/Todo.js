@@ -1,5 +1,5 @@
-import React, { useState, useReducer, useRef } from "react";
-
+import React, { useState, useReducer, useRef, useContext } from "react";
+const TodoDispatch = React.createContext(null);
 /**
  * todo:
  *  id: Date.now()
@@ -29,14 +29,15 @@ const reducer = (state, action) => {
 const Todo = ({ todoList = [] }) => {
   const [state, dispatch] = useReducer(reducer, { todoList });
   return (
-    <div>
-      {TodoList(state, dispatch)}
-      {AddTodo(state, dispatch)}
-    </div>
+    <TodoDispatch.Provider value={dispatch}>
+      <TodoList todoList={state.todoList} />
+      <AddTodoForm />
+    </TodoDispatch.Provider>
   );
 };
 
-const AddTodo = (state, dispatch) => {
+const AddTodoForm = () => {
+  const dispatch = useContext(TodoDispatch);
   const [mission, setMission] = useState("");
   const inputEl = useRef(null);
 
@@ -47,22 +48,21 @@ const AddTodo = (state, dispatch) => {
   };
 
   return (
-    <div>
-      <div className="add-mission-wrapper">
-        <input
-          ref={inputEl}
-          type="text"
-          value={mission}
-          onChange={e => setMission(e.target.value)}
-        />
-        <button onClick={() => onButtonClick()}>Add mission</button>
-      </div>
+    <div className="add-mission-wrapper">
+      <input
+        ref={inputEl}
+        type="text"
+        value={mission}
+        onChange={e => setMission(e.target.value)}
+      />
+      <button onClick={() => onButtonClick()}>Add mission</button>
     </div>
   );
 };
 
-const TodoList = (state, dispatch) => {
-  let todoList = state.todoList;
+const TodoList = ({ todoList }) => {
+  console.log(todoList);
+  const dispatch = useContext(TodoDispatch);
   todoList = todoList.filter(item => item.status !== "deleted");
   return (
     <div>
