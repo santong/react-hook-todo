@@ -24,9 +24,9 @@ const reducer = (state, action) => {
   }
 
   return { ...state, todoList };
-}
+};
 
-const Todo = ({ todoList  = [] }) => {
+const Todo = ({ todoList = [] }) => {
   const [mission, setMission] = useState("");
   const [state, dispatch] = useReducer(reducer, { todoList });
   const inputEl = useRef(null);
@@ -51,36 +51,34 @@ const Todo = ({ todoList  = [] }) => {
       </div>
     </div>
   );
-}
-
+};
 
 const TodoList = (state, dispatch) => {
   let todoList = state.todoList;
   todoList = todoList.filter(item => item.status !== "deleted");
   return (
-    <>
+    <div>
       {todoList.map(todo => {
+        const { id, mission, status } = todo;
         return (
-          <div key={todo.id} className="todo-item-wrapper">
-            <p>Mission: {todo.mission}</p>
-            <p>Status : {todo.status}</p>
-            {todo.status === "doing" && (
-              <>
-                <button onClick={() => dispatch({ id: todo.id, type: "done" })}>
+          <div key={id} className="todo-item-wrapper">
+            <p>Mission: {mission}</p>
+            <p>Status : {status}</p>
+            {status === "doing" && (
+              <div>
+                <button onClick={() => dispatch({ id, type: "done" })}>
                   done
                 </button>
-                <button
-                  onClick={() => dispatch({ id: todo.id, type: "deleted" })}
-                >
+                <button onClick={() => dispatch({ id, type: "deleted" })}>
                   delete
                 </button>
-              </>
+              </div>
             )}
           </div>
         );
       })}
-    </>
+    </div>
   );
-}
+};
 
 export default Todo;
