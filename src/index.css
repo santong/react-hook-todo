@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.todo-item-wrapper {
+  border: 1px solid #eee;
+  padding: 20px;
+}
+
+.add-mission-wrapper {
+  padding: 20px;
+}

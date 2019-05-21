@@ -1,24 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import Todo from "./Todo";
+
+const MOCK_DATA = [
+  {
+    id: 1000,
+    mission: "测试 useState",
+    status: "done"
+  },
+  {
+    id: 1001,
+    mission: "测试 useReducer",
+    status: "doing"
+  },
+  {
+    id: 1002,
+    mission: "测试 useRef",
+    status: "doing"
+  },
+  {
+    id: 1003,
+    mission: "测试 useEffect",
+    status: "doing"
+  }
+];
+
+const loadDataAsync = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(MOCK_DATA);
+    }, 2000);
+  });
+};
 
 function App() {
+  const [todoList, setTodoList] = useState([])
+
+  loadDataAsync().then((todoListFromCloud) => {
+    setTodoList(todoListFromCloud)
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {todoList.length > 0 && <Todo todoList={todoList}/>}
     </div>
   );
 }
