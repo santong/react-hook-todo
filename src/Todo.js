@@ -27,8 +27,17 @@ const reducer = (state, action) => {
 };
 
 const Todo = ({ todoList = [] }) => {
-  const [mission, setMission] = useState("");
   const [state, dispatch] = useReducer(reducer, { todoList });
+  return (
+    <div>
+      {TodoList(state, dispatch)}
+      {AddTodo(state, dispatch)}
+    </div>
+  );
+};
+
+const AddTodo = (state, dispatch) => {
+  const [mission, setMission] = useState("");
   const inputEl = useRef(null);
 
   const onButtonClick = () => {
@@ -39,7 +48,6 @@ const Todo = ({ todoList = [] }) => {
 
   return (
     <div>
-      {TodoList(state, dispatch)}
       <div className="add-mission-wrapper">
         <input
           ref={inputEl}
