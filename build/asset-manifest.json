@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "//santongdbs.com/react-hook-todo/build/static/css/main.54981800.chunk.css",
-    "main.js": "//santongdbs.com/react-hook-todo/build/static/js/main.ac6fbe08.chunk.js",
-    "main.js.map": "//santongdbs.com/react-hook-todo/build/static/js/main.ac6fbe08.chunk.js.map",
+    "main.js": "//santongdbs.com/react-hook-todo/build/static/js/main.d701945a.chunk.js",
+    "main.js.map": "//santongdbs.com/react-hook-todo/build/static/js/main.d701945a.chunk.js.map",
     "runtime~main.js": "//santongdbs.com/react-hook-todo/build/static/js/runtime~main.d2b85733.js",
     "runtime~main.js.map": "//santongdbs.com/react-hook-todo/build/static/js/runtime~main.d2b85733.js.map",
     "static/js/2.d23e1248.chunk.js": "//santongdbs.com/react-hook-todo/build/static/js/2.d23e1248.chunk.js",
     "static/js/2.d23e1248.chunk.js.map": "//santongdbs.com/react-hook-todo/build/static/js/2.d23e1248.chunk.js.map",
     "index.html": "//santongdbs.com/react-hook-todo/build/index.html",
-    "precache-manifest.72f8dfed85a626795e2293ccd6c077e6.js": "//santongdbs.com/react-hook-todo/build/precache-manifest.72f8dfed85a626795e2293ccd6c077e6.js",
+    "precache-manifest.8c2f447165a70560b0e01ea030d52913.js": "//santongdbs.com/react-hook-todo/build/precache-manifest.8c2f447165a70560b0e01ea030d52913.js",
     "service-worker.js": "//santongdbs.com/react-hook-todo/build/service-worker.js",
     "static/css/main.54981800.chunk.css.map": "//santongdbs.com/react-hook-todo/build/static/css/main.54981800.chunk.css.map"
   }

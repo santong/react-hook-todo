@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bfb9307cc01c71bdb5e305f0d6cb415e",
+    "revision": "7d6283f31b13368b2ebec85650859ce7",
     "url": "//santongdbs.com/react-hook-todo/build/index.html"
   },
   {
-    "revision": "f80a75303312f9bbd39d",
+    "revision": "2e9d19f752d84c06c321",
     "url": "//santongdbs.com/react-hook-todo/build/static/css/main.54981800.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "//santongdbs.com/react-hook-todo/build/static/js/2.d23e1248.chunk.js"
   },
   {
-    "revision": "f80a75303312f9bbd39d",
-    "url": "//santongdbs.com/react-hook-todo/build/static/js/main.ac6fbe08.chunk.js"
+    "revision": "2e9d19f752d84c06c321",
+    "url": "//santongdbs.com/react-hook-todo/build/static/js/main.d701945a.chunk.js"
   },
   {
     "revision": "0aebe6d9d755b1a41dc1",

@@ -29,7 +29,7 @@ const loadDataAsync = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(MOCK_DATA);
-    }, 2000);
+    }, 1000);
   });
 };
 
@@ -46,7 +46,7 @@ function App() {
       setIsFinish(true);
     });
 
-  return <div className="App">{isFinish && <Todo todoList={todoList} />}</div>;
+  return <div className="App"> {isFinish && <Todo todoList={todoList} />}</div>;
 }
 
 export default App;
